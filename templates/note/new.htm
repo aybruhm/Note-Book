@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container"><br><br><br>
+    <form method="POST">
+        <fieldset class="form-group row-cols-2">
+            <input type="text" name="title" class="form-control" placeholder="Title..">
+            <small id="passwordHelpInline">Must be 10-100 characters long.</small>
+        </fieldset>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-light bg-warning">Select</button>
+            <button type="button" class="btn btn-outline-light bg-warning dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Categories</span>
+            </button>
+            <div class="dropdown-menu">
+                <a href="" class="dropdown-item">Personal</a>
+                <a href="" class="dropdown-item">Work</a>
+                <a href="" class="dropdown-item">Study</a>
+                <a href="" class="dropdown-item">Family Affairs</a>
+                <!-- <div class="dropdown-divider">
+                    <a href="" class="dropdown-item">Separated link</a>
+                </div> -->
+            </div>
+        </div>
+        <br><br>
+
+        <div class="form-group row-cols-8">
+            <textarea name="content" class="form-control" cols="38" rows="7" placeholder="Type a note.."></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-light bg-warning">Submit</button>
+    </form>
+</div>
+{% endblock %}
