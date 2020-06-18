@@ -4,6 +4,7 @@
 {% block content %}
 <div class="container"><br><br><br>
     <form method="POST">
+    {% csrf_token %}
         <fieldset class="form-group row-cols-2">
             <input type="text" name="title" class="form-control" placeholder="Title..">
             <small id="passwordHelpInline">Must be 10-100 characters long.</small>

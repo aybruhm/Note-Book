@@ -7,55 +7,28 @@
     <div class="container">
         <main class="role">
             <hr>
+            {% for note in notes %}
             <article class="media content-section">
                 <div class="media-body">
                     <div class="article-metadata">
-                        <br>
-                        <a href="/note.htm" style="color: #ffc107;">
-                            <h2 class="class-title">Guardian</h2>
+                        <a href="{% url 'note' note.id %}" style="color: #ffc107;">
+                            <h2 class="class-title">{{ note.title }}</h2>
                         </a>
                         <param class="mr-2">
-                        Category
-                        <small class="text-muted">Timestamp</small>
+                        {{ note.category }}
+                        <small class="text-muted">{{ note.timestamp }}</small>
                     </div>
                 </div>
             </article>
             <hr>
-            <article class="media content-section">
-                <div class="media-body">
-                    <div class="article-metadata">
-                        <br>
-                        <a href="/note.htm" style="color: #ffc107;">
-                            <h2 class="class-title">Darkness</h2>
-                        </a>
-                        <param class="mr-2">
-                        Category
-                        <small class="text-muted">Timestamp</small>
-                    </div>
-                </div>
-            </article>
-            <hr>
-            <article class="media content-section">
-                <div class="media-body">
-                    <div class="article-metadata">
-                        <br>
-                        <a href="/note.htm" style="color: #ffc107;">
-                            <h2 class="class-title">Hate</h2>
-                        </a>
-                        <param class="mr-2">
-                        Category
-                        <small class="text-muted">Timestamp</small>
-                    </div>
-                </div>
-            </article>
+            {% endfor %}
             <br>
-            <hr>
         </main>
     </div>
     <br>
 
     <div class="container">
-        <a href="/new.htm" class="btn btn-outline-light bg-warning float-right">Add</a>
+        <a href="{% url 'new' %}" class="btn btn-warning btn-fill float-right">Add</a>
     </div>
 
 </div>

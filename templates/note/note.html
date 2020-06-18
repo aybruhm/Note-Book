@@ -27,8 +27,8 @@
     <hr>
 
     <div class="container">
-        <a href="/new.htm" class="btn btn-danger float-right">Delete</a>
-        <a href="/new.htm" class="btn btn-warning float-right">Edit</a>
+        {% comment %} <a href="{% url 'delete' note.id %}" class="btn btn-danger float-right">Delete</a>
+        <a href="{% url 'edit' note.id %}" class="btn btn-warning float-right">Edit</a> {% endcomment %}
     </div>
 </div>
 {% endblock %}
