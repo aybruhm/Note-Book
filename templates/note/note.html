@@ -6,15 +6,15 @@
     <div class="container">
         <main class="role">
             <p class="cursive">
-                {{ content }}
+                {{ note_.content }}
             </p>
         </main>
     </div>
     <hr>
 
-    <div class="container">
-        {% comment %} <a href="{% url 'delete' pk %}" class="btn btn-danger float-right">Delete</a>
-        <a href="{% url 'edit' pk %}" class="btn btn-warning float-right">Edit</a> {% endcomment %}
+    <div class="container inline-group">
+        <a href="{% url 'delete' pk %}" class="btn btn-danger float-right" style="margin: 0px 3px;">Delete</a>
+        <a href="{% url 'edit' pk %}" class="btn btn-warning float-right">Edit</a>
     </div>
 </div>
 {% endblock %}
