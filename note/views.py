@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from .models import Note
 
 
@@ -8,22 +8,22 @@ def home(request):
 
 def new(request):
     if request.method == 'POST':
-        if request.POST.get('title') and request.POST.get('content'):
+        if request.POST.get('title') and request.POST.get('content') and request.POST.get('optradio'):
             note = Note()
             note.title = request.POST.get('title')
             note.content = request.POST.get('content')
+            note.category = request.POST.get('optradio')
             note.save()
+            return redirect('')
         else:
             request.method == 'POST'
     return render(request, 'note/new.html')
 
 def note(request, pk):
-    context = Note.objects.filter(id=pk)
-    note = Note.objects.filter()
-    print(note)
-    content = note.content(instance=note)
+    _note = Note.objects.get(pk=pk)
+    content = _note.content
     print(content)
-    return render(request, 'note/note.html', {'context': context, 'content': content})
+    return render(request, 'note/note.html', {'content': content})
 
 def update(request, pk):
     pass

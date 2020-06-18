@@ -6,29 +6,15 @@
     <div class="container">
         <main class="role">
             <p class="cursive">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum rem commodi, quaerat voluptates
-                fugiat
-                ipsa impedit iste placeat nemo sit tempora autem est accusantium molestiae minus harum
-                exercitationem
-                quia facilis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio natus officiis at
-                dolores
-                pariatur voluptate, eius tempora soluta dolorum perspiciatis minus quisquam eligendi? Officiis
-                laborum
-                rerum, labore facere temporibus tenetur? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Unde,
-                ipsam. Optio, necessitatibus? Alias nihil molestias asperiores hic aliquam, veritatis adipisci illo
-                consequuntur aliquid. Sunt laboriosam cumque soluta optio repudiandae dolor? Lorem ipsum dolor sit
-                amet
-                consectetur adipisicing elit. Quos, facere esse nam delectus iusto adipisci voluptas ullam excepturi
-                molestiae dolorem voluptate ex sunt non necessitatibus vero, expedita consequuntur quidem minus?
+                {{ content }}
             </p>
         </main>
     </div>
     <hr>
 
     <div class="container">
-        {% comment %} <a href="{% url 'delete' note.id %}" class="btn btn-danger float-right">Delete</a>
-        <a href="{% url 'edit' note.id %}" class="btn btn-warning float-right">Edit</a> {% endcomment %}
+        {% comment %} <a href="{% url 'delete' pk %}" class="btn btn-danger float-right">Delete</a>
+        <a href="{% url 'edit' pk %}" class="btn btn-warning float-right">Edit</a> {% endcomment %}
     </div>
 </div>
 {% endblock %}
