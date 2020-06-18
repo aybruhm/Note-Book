@@ -6,22 +6,21 @@
 <div class="container"><br><br><br>
     <form method="POST">
     {% csrf_token %}
-        <fieldset class="form-group row-cols-2">
+    <div class="row">
+        <div class="col-6">
             {{ form.title | as_crispy_field }}
             <small id="passwordHelpInline">Must be 10-100 characters long.</small>
-        </fieldset>
+        </div>
         
-        <fieldset class="form-group row-cols-2">
+        <div class="col-6">
             {{ form.category | as_crispy_field }}
-            <small id="passwordHelpInline">Must be 10-100 characters long.</small>
-        </fieldset>
+            <small id="passwordHelpInline">Personal, Study, Family Affairs, Work, Project.</small>
         </div>
-        <br><br>
+        </div><br><br>
 
-        <div class="form-group row-cols-8">
-            {{ form.content | as_crispy_field }}
-        </div>
+        {{ form.content | as_crispy_field }}
         <button type="submit" class="btn btn-outline-light bg-warning">Submit</button>
+    </div>
     </form>
 </div>
 {% endblock %}

@@ -2,7 +2,7 @@ from django import forms
 from .models import Note
 
 
-class EntryForm(forms.ModelForm):
+class NoteForm(forms.ModelForm):
 
     class Meta:
         model   = Note
@@ -13,7 +13,7 @@ class EntryForm(forms.ModelForm):
             }
         ),
             'category': forms.TextInput(attrs={
-                    'placeholder': ''
+                    'placeholder': 'Identify a Category: '
                 }
             ),
             'content': forms.Textarea(attrs={

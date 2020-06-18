@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect, redirect
 from .models import Note
+from .forms import NoteForm
 
 
 def home(request):
@@ -7,25 +8,26 @@ def home(request):
     return render(request, 'note/index.html', {'notes': notes})
 
 def new(request):
+    form = NoteForm()
+
     if request.method == 'POST':
-        if request.POST.get('title') and request.POST.get('content') and request.POST.get('optradio'):
-            note = Note()
-            note.title = request.POST.get('title')
-            note.content = request.POST.get('content')
-            note.category = request.POST.get('optradio')
-            note.save()
-            return HttpResponseRedirect("/")
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
         else:
-            request.method == 'POST'
-    return render(request, 'note/new.html')
+            form = NoteForm()
+            return HttpResponseRedirect("/")
+    return render(request, 'note/new.html', {'form': form})
 
 def note(request, pk):
     print(pk)
-    note_ = Note.objects.get(pk=pk)
+    note_ = Note.objects.get(pk=pk) # Gets each note
     print(note_.content)
     return render(request, 'note/note.html', {'note_': note_, 'pk': pk})
 
 def update(request, pk):
+    note_ = Note.objects.get(pk=pk)
     pass
 
 def delete(request, pk):
