@@ -14,8 +14,7 @@
                         <a href="{% url 'note' note.id %}" style="color: #ffc107;">
                             <h2 class="class-title">{{ note.title }}</h2>
                         </a>
-                        <param class="mr-2">
-                        {{ note.category }}
+                        <span class="mr-1" style="font-size: 18px;">{{ note.category }}</span>
                         <small class="text-muted">{{ note.timestamp }}</small>
                     </div>
                 </div>

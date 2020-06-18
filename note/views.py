@@ -28,7 +28,17 @@ def note(request, pk):
 
 def update(request, pk):
     note_ = Note.objects.get(pk=pk)
-    pass
+    form = NoteForm(instance=note_)
+
+    if request.method == 'POST':
+        form = NoteForm(request.POST, instance=note_)
+        print(form)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            form = NoteForm(instance=note_)
+    return render(request, 'note/update.html', {'form': form})
 
 def delete(request, pk):
     Note.objects.get(id=pk).delete()
