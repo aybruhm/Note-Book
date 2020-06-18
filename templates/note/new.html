@@ -1,39 +1,25 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container"><br><br><br>
     <form method="POST">
     {% csrf_token %}
         <fieldset class="form-group row-cols-2">
-            <input type="text" name="title" class="form-control" placeholder="Title..">
+            {{ form.title | as_crispy_field }}
             <small id="passwordHelpInline">Must be 10-100 characters long.</small>
         </fieldset>
         
-        <div class="form-check-inline">
-            <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio">Personal
-            </label>
-        </div>
-        <div class="form-check-inline">
-            <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio">Work
-            </label>
-        </div>
-        <div class="form-check-inline">
-            <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio">Family Affairs
-            </label>
-        </div>
-        <div class="form-check-inline">
-            <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradio">Study
-            </label>
+        <fieldset class="form-group row-cols-2">
+            {{ form.category | as_crispy_field }}
+            <small id="passwordHelpInline">Must be 10-100 characters long.</small>
+        </fieldset>
         </div>
         <br><br>
 
         <div class="form-group row-cols-8">
-            <textarea name="content" class="form-control" cols="38" rows="7" placeholder="Type a note.."></textarea>
+            {{ form.content | as_crispy_field }}
         </div>
         <button type="submit" class="btn btn-outline-light bg-warning">Submit</button>
     </form>
