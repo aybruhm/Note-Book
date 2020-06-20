@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=-y7&izq@m7syb+8dd7tsa#!bry0tu3-g2=xajbk82w6y_k04$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['notebook-20.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -127,6 +127,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    '/notebook/notebook/static'
-]
+    os.path.join(BASE_DIR, 'static')
+]g
