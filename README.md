@@ -36,7 +36,7 @@ git clone https://github.com/israelvictory/NoteBook.git
 2. change directory to diary:
 
 ```
-cd NoteBook/notebook
+cd Note-Book/notebook
 ```
 
 3. Install the requirements with the command below:
